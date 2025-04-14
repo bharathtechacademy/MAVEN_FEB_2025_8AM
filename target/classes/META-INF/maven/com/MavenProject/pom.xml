@@ -37,6 +37,13 @@
 			<version>42.7.5</version>
 		</dependency>
 
+		<!--selenium-java for web automation-->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.31.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
