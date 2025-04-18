@@ -24,6 +24,12 @@ public class BasicXpathLocators {
 	
 	// Syntax 5: //tagName[starts-with(@Attribute,'Partial-Attribute-Value-StartsWith')]
 	// Syntax 6: //tagName[starts-with(text(),'Partial-Text-Value-StartsWith')]
+	
+	/******************* BASIC XPATH (LEVEL 3) **********************/
+	/***When we are unable to locate the unique element using single attribute or text value, we can combine multiple by using 'and' ***/
+	
+	// Syntax 7: //tagName[@Attribute1='Attribute-Value' and @Attribute2='Attribute-Value' and text()='Text-Value']
+	
 
 	public static void main(String[] args) {
 		
@@ -56,6 +62,12 @@ public class BasicXpathLocators {
 		
 //		10. Locate Caption using 'xpath' locator - Syntax 6
 		driver.findElement(By.xpath("//p[starts-with(text(),'Experience')]"));
+		
+//		11. Locate Logo using 'xpath' locator - Syntax 7
+		driver.findElement(By.xpath("//img[@class='logo' and @title='ParaBank' and @alt='ParaBank']"));
+		
+//		12. Locate Caption using 'xpath' locator - Syntax 7
+		driver.findElement(By.xpath("//p[@class='caption' and text()='Experience the difference']"));
 
 	}
 
