@@ -1,10 +1,15 @@
 package selenium.webactions;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,7 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class WebActions {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 //		1. Launch the Browser window (Browser = Chrome)  		
 		WebDriver driver = new ChromeDriver();		
@@ -164,8 +169,16 @@ public class WebActions {
 		String sourceOfImage = image.getAttribute("src");
 		
 		// Verify the image dimensions
+		int width = image.getSize().getWidth();
+		int height = image.getSize().getHeight();
+		
 		// Get the position of the image
+		Point imagePosition = image.getLocation();
+		int x = imagePosition.getX();
+		int y = imagePosition.getY();
+		
 		// verify a specific pixel color
+		int colorCode = ImageIO.read(new File(sourceOfImage)).getRGB(x,y);
 
 
 
