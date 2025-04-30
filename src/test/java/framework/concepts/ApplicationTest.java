@@ -12,6 +12,7 @@ public class ApplicationTest {
 	//6. Test Data Parameterization
 	//7. Inbuilt reporting not available
 	//8. Monitoring test execution and act according to the test results
+	//9. parallel testing
 
 	public static void main(String[] args) {
 		
